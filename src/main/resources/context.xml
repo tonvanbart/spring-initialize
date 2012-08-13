@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+    <context:annotation-config />
+    <context:component-scan base-package="org.vanbart" />
+
+    <bean name="configProps" class="java.util.Properties">
+        <constructor-arg>
+            <props>
+                <prop key="msg">This is a message from configProps</prop>
+            </props>
+        </constructor-arg>
+    </bean>
+    
+<!--    <bean name="messageClient" class="org.vanbart.MessageClient"/>-->
+
+    <!-- profiles -->
+
+    <bean name="message" class="java.lang.String">
+        <constructor-arg value="This is profile default"/>
+    </bean>
+
+    <beans profile="test1">
+
+        <bean name="message" class="java.lang.String">
+            <constructor-arg value="This is profile test1" />
+        </bean>
+
+    </beans>
+
+    <beans profile="test2">
+
+        <bean name="message" class="java.lang.String">
+            <constructor-arg value="This is profile test2" />
+        </bean>
+
+    </beans>
+
+</beans>
