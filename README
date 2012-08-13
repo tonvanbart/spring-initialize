@@ -1,0 +1,9 @@
+This is a proof-of-concept project which shows a Spring ApplicationContextInitializer which:
+
+- switches certain Spring profiles on
+- scans the context for beans which indicate that they want to be configured, and calls annotated methods passing in
+  values from the configuration. The annotation also allows the specification of a default value in case the indicated
+  key is not present.
+
+This simple example just uses a Properties file for the configuration values, in production code this could be an
+instance of, for example, Commons Configuration. The concept remains the same.
