@@ -47,10 +47,10 @@ public class ExampleApplicationContextInitializer implements ApplicationContextI
                     String key = configureValue.propertyName();
                     String configuredValue = configProps.getProperty(key);
                     if (configuredValue != null) {
-                        System.out.println("Setting field '"+field.getName()+"' to value '"+configuredValue+"'");
+                        System.out.println("Setting field '"+field.getName()+"' on bean '"+name+"' to value '"+configuredValue+"'");
                         setFieldOnBean(bean, field, configuredValue);
                     } else {
-                        System.out.println("Setting field '"+field.getName()+"' to default:'"+defaultValue+"'");
+                        System.out.println("Setting field '"+field.getName()+"' on bean '"+name+"' to default:'"+defaultValue+"'");
                         setFieldOnBean(bean, field, defaultValue);
                     }
                 }

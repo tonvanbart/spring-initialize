@@ -57,7 +57,7 @@ public class ContextTest {
         ExampleApplicationContextInitializer initializer = new ExampleApplicationContextInitializer();
         Properties properties = new Properties();
         properties.setProperty("profile","test1");
-        properties.setProperty("someValue","value from initializer");
+        properties.setProperty("someKey","value from initializer");
         initializer.setConfigProps(properties);
 
         initializer.initialize(ctx);

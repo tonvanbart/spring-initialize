@@ -13,8 +13,8 @@ public class MessageClient {
     @Autowired
     private String message;
 
-    @ConfigureValue(defaultValue = "default value", propertyName = "someValue")
-    private String someValue;
+    @ConfigureValue(defaultValue = "default value", propertyName = "someKey")
+    private String myText;
 
     public void printMessage() {
         System.out.println("message = " + message);
@@ -25,7 +25,7 @@ public class MessageClient {
     }
 
     public String showConfiguredValue() {
-        return someValue;
+        return myText;
     }
 
 }
